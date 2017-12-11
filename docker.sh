@@ -3,7 +3,6 @@
 # This script builds and clusters Elastic Stack (elasticsearch instances and kibana).
 # Usage:           1               2       3           4            5       6       7         8
 # ./docker.sh <IP of container> <Node#> <domain> <data directory> <HEAP> <cluster><counter><Nodes>
-$CONTAINER_IP $COUNTER $DATA_DIR $HEAP $CLUSTER
 HOSTS=$(cat iplist.txt)
 mkdir -p $4/elasticsearch_$2/data
 chmod -R 777 $4/elasticsearch_$2
