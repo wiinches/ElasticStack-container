@@ -4,7 +4,6 @@
 # Usage:           1               2       3           4            5       6       7         8     9         10
 # ./docker.sh <IP of container> <Node#> <domain> <data directory> <HEAP> <cluster><counter><Nodes><version><elastic_password>
 HOSTS=$(cat iplist.txt)
-$
 mkdir -p $4/elasticsearch_$2/data
 chmod -R 777 $4/elasticsearch_$2
 docker run -itd --name elasticsearch_$2 --restart=always \
