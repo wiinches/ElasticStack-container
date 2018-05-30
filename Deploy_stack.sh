@@ -58,7 +58,7 @@ done
 docker exec -itd kibana sed -i s/changeme/$ELASTIC_PASSWORD/g /usr/share/kibana/config/kibana.yml
 chmod -R g+rwx $DATA_DIR
 chgrp -R 1000 $DATA_DIR
-docker restart $(docker ps -a | grep elasticsearch_)
+docker restart $(docker ps -a | grep elasticsearch_ | awk '{print $1}')
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## kibana url
 echo "Your kibana instance is now running at $(docker ps -a -f NAME=kibana | awk '{print $11}' | awk -F"->" '{print $1}')"
